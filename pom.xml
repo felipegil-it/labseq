@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.altice</groupId>
 	<artifactId>labseq</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0git </version>
 	<name>labseq</name>
 	<description>Exercício Altice Labs 2023</description>
 	<properties>
