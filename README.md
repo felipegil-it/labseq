@@ -1,52 +1,23 @@
-# Exercício Altice Labs
-Implement a REST service, using a JAVA framework, returning a value from the labseq sequence.
-Optionally implement a simple JavaScript web GUI to invoke the service.
+# Instruções para a execução da API
+Como sugestão, essa API poderá ser executada atráves de uma imagem docker ou através da 
+execução direta do projeto em um servidor de aplicação (IDE / SpringBoot).
 
-### The labseq
-l(n) - sequence is defined as follows:
-* n=0 => l(0) = 0
-* n=1 => l(1) = 1
-* n=2 => l(2) = 0
-* n=3 => l(3) = 1
-* n>3 => l(n) = l(n-4) + l(n-3)
+### Docker
+Foi disponibilizado no diretório raiz o arquivo Dockerfile, com o intuito de facilitar a execução do projeto para a devida avaliação.
 
-* Example of the first sequence values:
-0
-1
-0
-1
-1
-1
-1
-2
-2
-2
-3
-[...]
+* Dockerfile\
+Para a criação do container a partir do arquivo em questão, deverão ser executados
+os seguintes passos:
 
-### The endpoint 
-* The endpoint created should be in the form <baseurl>/labseq/{n} where {n}
-represents the index of the sequence’s (single) value to return. The index may be any non-
-negative integer number.
+  * No diretório onde se localiza o arquivo Dockerfile, iniciar o prompt de comando e executar todo o conteúdo entre aspas:
+    *  "docker build -t labseq ."
+    *  "docker run --name docker-labseq -p 8080:8080 labseq"
+    
+### Swagger 
+Após a inicialização do container docker, a URL para ter acesso ao swagger é: http://localhost:8080/swagger-ui/index.html
 
-### The caching mechanism
-* The implemented service should use a caching mechanism to take advantage of previous
-calculations to speed up future calculations. This caching mechanism must be used in the
-algorithm’s intermediate calculations (if applicable), and not only in the endpoint’s
-invocations.
 
-### The answer
-The answer must include:
-* Source code
-* REST API documentation – Open API format (Swagger)
-* Execution instructions (containers or other)
-
-### Note
-* Java code development best practices will be considered in the evaluation of the proposed
-resolution. 
-* Calculation performance is also a plus - calculation of l(10000) must be correctly
-returned under 10s.
-* If there are any doubts regarding specific issues of the exercise that may influence its
-implementation, the applicant must make assumptions and implement the exercise according
-to them (these assumptions should be included in the answer).
-
+### Testes Unitários
+Foram desenvolvidos os seguintes testes unitários:
+* Para garantir que a performance durante o cálculo era a esperada;
+* Para garantir que apenas numeros inteiros não negativos poderiam ser usados como o índice fornecido. 
