@@ -17,7 +17,7 @@ public class LabSeqServiceImplTests {
     @Test
     @Timeout(value = 10, unit = TimeUnit.SECONDS)
     public void testGetValueLabSeqPerformance() {
-        labSeqService.getValueLabSeq(10000);
+        labSeqService.calcValFromLabSeq(10000);
     }
 
 }

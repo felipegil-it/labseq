@@ -24,7 +24,7 @@ public class LabSeqControllerTests {
     public void testLabseqWithPositiveNumber() {
         int indexLabSeq = 5;
         long expectedValue = 1L;
-        when(labSeqService.getValueLabSeq(indexLabSeq)).thenReturn(expectedValue);
+        when(labSeqService.calcValFromLabSeq(indexLabSeq)).thenReturn(expectedValue);
 
         ResponseEntity<Long> response = labseqController.labseq(indexLabSeq);
 
@@ -36,7 +36,7 @@ public class LabSeqControllerTests {
     public void testLabseqWithZero() {
         int indexLabSeq = 0;
         long expectedValue = 0L;
-        when(labSeqService.getValueLabSeq(indexLabSeq)).thenReturn(expectedValue);
+        when(labSeqService.calcValFromLabSeq(indexLabSeq)).thenReturn(expectedValue);
 
         ResponseEntity<Long> response = labseqController.labseq(indexLabSeq);
 

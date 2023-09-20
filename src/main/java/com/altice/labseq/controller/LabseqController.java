@@ -78,7 +78,7 @@ public class LabseqController {
     public ResponseEntity<Long> labseq(
             @PathVariable("n")
             @PositiveOrZero(message = "O valor deve ser positivo ou zero") int indexLabSeq){
-        return ResponseEntity.status(HttpStatus.OK).body(labSeqService.getValueLabSeq(indexLabSeq));
+        return ResponseEntity.status(HttpStatus.OK).body(labSeqService.calcValFromLabSeq(indexLabSeq));
     }
 
 }
