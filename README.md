@@ -2,6 +2,9 @@
 Como sugestão, essa API poderá ser executada atráves de uma imagem docker ou através da 
 execução direta do projeto em um servidor de aplicação (IDE / SpringBoot).
 
+### Maven
+Com o maven já instalado, é necessário realizar o seguinte comando no diretório raíz do projeto usando o prompt de comando: "mvn install"
+
 ### Docker
 Foi disponibilizado no diretório raiz o arquivo Dockerfile, com o intuito de facilitar a execução do projeto para a devida avaliação.
 
